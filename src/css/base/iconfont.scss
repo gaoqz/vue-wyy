@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'iconfont';  /* project id 407345 */
+  src: url('//at.alicdn.com/t/font_407345_axe8vd7s09all3di.eot');
+  src: url('//at.alicdn.com/t/font_407345_axe8vd7s09all3di.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_407345_axe8vd7s09all3di.woff') format('woff'),
+  url('//at.alicdn.com/t/font_407345_axe8vd7s09all3di.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_407345_axe8vd7s09all3di.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont", "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.iconMore {
+  position: relative;
+  &:before {
+    @extend .iconfont, .font-color-global-lightest;
+    position: absolute;
+    display: table-row;
+    text-align: right;
+    content: '\e600';
+    //background-color: blue;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-size: remSize(30);
+  }
+}
+
+$iconSizeMap: (
+  "xs":remSize(15),
+  "sm":remSize(30),
+  "md":remSize(40),
+  "lg":remSize(60),
+  "xl":remSize(85),
+  "full":remSize(750)
+) !global;
+$iconR: 0.31 !global;
+@each $iconName, $iconSize in $iconSizeMap {
+  @each $paddingName, $paddingSize in $paddingSizeMap {
+    .with-iconfont-#{$iconName}-#{$paddingName} {
+      width: 16rem - $paddingSize * 3 - $iconSize*1.5;
+    }
+    .with-iconfont-R-#{$iconName}-#{$paddingName} {
+      width: 16rem - $paddingSize * 3 - $iconSize*(1+$iconR*2)*1.5;
+    }
+  }
+  .iconfont-#{$iconName} {
+    font-size: $iconSize;
+  }
+  .iconfont-R-height-#{$iconName} {
+    height: $iconSize*(1+$iconR*2);
+    line-height: $iconSize*(1+$iconR*2);
+  }
+  .iconfont-R-width-#{$iconName} {
+    width: $iconSize*(1+$iconR*2);
+  }
+  .iconfont-height-#{$iconName} {
+    height: $iconSize;
+    line-height: $iconSize;
+  }
+  .iconfont-width-#{$iconName} {
+    width: $iconSize;
+  }
+}
+
+.iconfont-R {
+  display: inline-block;
+  line-height: 1em;
+  border-radius: 16rem;
+  padding: 1em * $iconR;
+}
