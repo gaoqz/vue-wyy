@@ -7,6 +7,10 @@
 <script>
 export default {
     name: 'my',
+    beforeCreate: function() {
+        this.$store.commit('showOrHideHeader', true)
+        this.$store.commit('showOrHideFooter', true)
+    },
     data() {
         return {
             msg: 'my component!'
@@ -18,5 +22,3 @@ export default {
 <style lang="scss" scoped>
 @charset 'utf-8';
 </style>
-
-

@@ -25,7 +25,8 @@ $baseColorMap: (
   "blue":#00A5DE,
   "darkBlue":#5595EA,
   "light-blue": #108ee9,
-  "brown": #fffdf0
+  "brown": #fffdf0,
+  "main": #B72712
 ) !global;
 
 $mainColor: map_get($baseColorMap, 'green') !global;

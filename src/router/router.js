@@ -4,6 +4,7 @@ const My = r => require.ensure([], () => r(require('../components/my/my.vue')), 
 const Find = r => require.ensure([], () => r(require('../components/find/find.vue')), 'find')
 const Friends = r => require.ensure([], () => r(require('../components/friends/fridens.vue')), 'friends')
 const Search = r => require.ensure([], () => r(require('../components/search/search.vue')), 'search')
+const Play = r => require.ensure([], () => r(require('../components/play/play.vue')), 'play')
 
 export default [{
     path: '/',
@@ -27,6 +28,10 @@ export default [{
         {
             path: '/search',
             component: Search
+        },
+        {
+            path: '/play',
+            component: Play
         }
     ]
 }]

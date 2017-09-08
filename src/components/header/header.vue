@@ -1,7 +1,8 @@
 <template lang="html">
+<transition name="fadeIn">
   <div :style="{backgroundColor: skinColor}" class="header">
     <div class="tab">
-      <div class="iconfont item text-left padding-left-md font-color-white" @click="showAsideMenu(true)">
+      <div class="iconfont item text-left padding-left-md font-color-white" @click="showAsideMenu()">
           &#xe60a;
       </div>
       <div :class="{link: homeTabIndex === 1}" class="iconfont item text-right" @click="toMy()">
@@ -18,6 +19,7 @@
       </div>
     </div>
   </div>
+  </transition>
 </template>
 
 <script>
@@ -51,16 +53,28 @@ export default {
         this.$router.push('/friends');
     },
     toSearch() {
+        this.$store.commit('showOrHideHeader', false);
         this.$router.push('/search');
     },
-    showAsideMenu(flag) {
-      this.$store.commit('showAsideMenu', flag);
+    showAsideMenu() {
+      this.$store.commit('showAsideMenu', true);
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+
+    .fadeIn-enter-active {
+        transition: all .5s ease;
+    }
+    // .fadeIn-leave-active {
+    //     transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    // }
+    .fadeIn-enter {
+        transform: translateX(-250px);
+        opacity: 0;
+    }
   .header {
     background-color: #B72712;
     color: white;
@@ -73,7 +87,7 @@ export default {
       .item {
         display: inline-block;
         flex: 1;
-        padding: 15px;
+        padding: 10px;
         color: #BDBDBD;
       }
 

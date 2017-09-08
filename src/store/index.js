@@ -7,8 +7,19 @@ import getters from './getters'
 Vue.use(Vuex);
 
 const state = {
+    skinColor: localStorage.skinColor || '#B72712',
     homeTabIndex: null,
-    isShowAsideMenu: false
+    showAsideMenu: false,
+    isPlaying: false,
+    showFooter: true,
+    showHeader: true,
+    audio: {
+        name: '',
+        singer: '',
+        src: '',
+        imgUrl: ''
+    },
+    DOM: {}
 };
 
 export default new Vuex.Store({

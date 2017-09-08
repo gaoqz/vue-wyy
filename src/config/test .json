@@ -1,0 +1,112 @@
+{
+    "conclusionChoiceLogic": [{
+        "scope": [
+            1,
+            2
+        ],
+        "weightSumAlgo": [{
+                "floor": 5,
+                "ceiling": 6,
+                "conclusion": "白天加香蕉",
+                "conclusionDesc": "测试"
+            },
+            {
+                "floor": 9,
+                "ceiling": 18,
+                "conclusion": "测试",
+                "conclusionDesc": "测试"
+            }
+        ]
+    }],
+    "completionMappingLogic": [{
+        "scope": 3,
+        "tag": [
+            126,
+            5836,
+            16459
+        ]
+    }],
+    "questionList": {
+        "singleChoiceList": [{
+            "order": 1,
+            "type": "single_choice",
+            "question": "你喜欢白天还是黑夜？",
+            "questionDesc": "<div class=\"editor-info\">单选</div>",
+            "answer": [{
+                    "order": 1,
+                    "content": "白天",
+                    "weight": 1,
+                    "blank": false
+                },
+                {
+                    "order": 2,
+                    "content": "黑夜",
+                    "weight": 2,
+                    "blank": false
+                }
+            ]
+        }],
+        "completionList": [{
+            "order": 3,
+            "type": "completion",
+            "question": "请回答我的问题？",
+            "questionDesc": "<div class=\"editor-info\">填空</div>",
+            "format": "今天是晴天吗？:${TEXT}天;\n喜欢吃红烧鱼吗？:${TEXTAREA}条;\n你的幸运数字是？:${NUM}undefined;"
+        }],
+        "singleChoiceMatrixList": [{
+            "order": 2,
+            "type": "single_choice_matrix",
+            "question": "测试水果",
+            "questionDesc": "<div class=\"editor-info\">矩阵量表</div>",
+            "choice": [
+                "黄色",
+                "红色",
+                "橙色",
+                "紫色"
+            ],
+            "questionList": [{
+                    "order": 1,
+                    "question": "苹果是什么颜色？",
+                    "answerWeight": [
+                        1,
+                        2,
+                        3,
+                        4
+                    ]
+                },
+                {
+                    "order": 2,
+                    "question": "香蕉是什么颜色？",
+                    "answerWeight": [
+                        1,
+                        2,
+                        3,
+                        4
+                    ]
+                },
+                {
+                    "order": 3,
+                    "question": "橙色是什么颜色？",
+                    "answerWeight": [
+                        1,
+                        2,
+                        3,
+                        4
+                    ]
+                },
+                {
+                    "order": 4,
+                    "question": "葡萄是什么颜色？",
+                    "answerWeight": [
+                        1,
+                        2,
+                        3,
+                        4
+                    ]
+                }
+            ]
+        }],
+        "bundleId": 177
+    },
+    "bundleId": 177
+}
