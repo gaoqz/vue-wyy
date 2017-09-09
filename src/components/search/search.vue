@@ -18,10 +18,10 @@ export default {
         this.$store.commit('showOrHideHeader', false)
     },
     computed: {
-    skinColor() {
-      return this.$store.state.skinColor;
-    }
-  },
+        skinColor() {
+            return this.$store.state.skinColor;
+        }
+    },
     data() {
         return {
             keywords: ''
@@ -31,60 +31,58 @@ export default {
         goBack: function() {
             this.$router.go(-1);
         },
-        inputFocus: function() {},
-        toSearch: function() {}
+        inputFocus: function() { },
+        toSearch: function() { }
     }
 }
 </script>
 
 <style lang="scss" scoped>
-    @import '../../css/function/function.scss';
+@import '../../css/function/function.scss';
 
-    .showRouter-enter-active {
-        transition: all .5s ease;
+.showRouter-enter-active {
+    transition: all .5s ease;
+}
+// .showRouter-leave-active {
+//     transition: all 0 ease-out;
+// }
+.showRouter-enter {
+    transform: translateX(250px);
+    opacity: 0;
+}
+
+.s-header {
+    height: remSize(90);
+    width: 100%;
+    display: flex;
+
+    .back {
+        flex: 1.5;
+        line-height: remSize(90);
+        text-align: center;
     }
 
-    // .showRouter-leave-active {
-    //     transition: all 0 ease-out;
-    // }
+    .search-bar {
+        flex: 8.5;
+        line-height: remSize(90);
 
-    .showRouter-enter {
-        transform: translateX(250px);
-        opacity: 0;
-    }
-
-    .s-header{
-        height: remSize(90);
-        width: 100%;
-        display: flex;
-
-        .back {
-            flex: 1.5;
-            line-height: remSize(90);
-            text-align: center;
+        input {
+            -webkit-appearance: none;
+            color: #fff;
+            width: remSize(750 * 0.85 - 30);
+            margin-right: remSize(30);
+            border-bottom: solid 1px rgba(255, 255, 255, 0.6);
         }
 
-        .search-bar {
-            flex: 8.5;
-            line-height: remSize(90);
+        input::-webkit-input-placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
 
-            input {
-                -webkit-appearance: none;
-                color: #fff;
-                width: remSize(750 * 0.85 - 30);
-                margin-right: remSize(30);
-                border-bottom: solid 1px rgba(255, 255, 255, 0.6);
-            }
-
-            input::-webkit-input-placeholder {
-                color: rgba(255, 255, 255, 0.6);
-            }
-
-            input:focus {
-                border-bottom: solid 1px #fff;
-            }
+        input:focus {
+            border-bottom: solid 1px #fff;
         }
     }
+}
 </style>
 
 

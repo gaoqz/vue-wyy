@@ -22,69 +22,70 @@
 
 <script>
 export default {
-  name: 'footer',
-  computed: {
-      isPlaying() {
-          return this.$store.state.isPlaying;
-      },
-      skinColor() {
-          return this.$store.state.skinColor;
-      },
-      audio() {
-          return this.$store.state.audio;
-      },
-      DOM() {
-          return this.$store.state.DOM;
-      }
-  },
-  data: function() {
-      return {
-          currentTime: 0,
-          totalTime: 130,
-          isFavor: false,
-          defaultImgUrl: 'http://p3.music.126.net/ZgJLGQLGaXIW-s7lCgeWCQ==/760862046428277.jpg?param=30y30'
-      }
-  },
-  methods: {
-      toPlay() {
-          this.$router.push('/play');
-      },
-      play() {
-          this.$store.commit('play', !this.isPlaying);
-          !this.isPlaying ? this.DOM.dom.pause() : this.DOM.dom.play();
-      },
-      favor() {
-          this.isFavor = !this.isFavor;
-      }
-  }
+    name: 'footer',
+    computed: {
+        isPlaying() {
+            return this.$store.state.isPlaying;
+        },
+        skinColor() {
+            return this.$store.state.skinColor;
+        },
+        audio() {
+            return this.$store.state.audio;
+        },
+        DOM() {
+            return this.$store.state.DOM;
+        }
+    },
+    data: function() {
+        return {
+            currentTime: 0,
+            totalTime: 130,
+            isFavor: false,
+            defaultImgUrl: 'http://p3.music.126.net/ZgJLGQLGaXIW-s7lCgeWCQ==/760862046428277.jpg?param=30y30'
+        }
+    },
+    methods: {
+        toPlay() {
+            this.$router.push('/play');
+        },
+        play() {
+            this.$store.commit('play', !this.isPlaying);
+            !this.isPlaying ? this.DOM.dom.pause() : this.DOM.dom.play();
+        },
+        favor() {
+            this.isFavor = !this.isFavor;
+        }
+    }
 }
 </script>
 
 <style lang="scss" scoped>
-    @import '../../css/function/remSize.scss';
-    .fade-enter-active {
-        transition: all .3s ease-in-out;
-    }
+@import '../../css/function/remSize.scss';
+.fade-enter-active {
+    transition: all .3s ease-in-out;
+}
 
-    .fade-leave-active {
-        transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-    }
+.fade-leave-active {
+    transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
 
-    .fade-enter, .fade-leave-active {
-        transform: translateY(50px);
-        opacity: 0;
-    }
+.fade-enter,
+.fade-leave-active {
+    transform: translateY(50px);
+    opacity: 0;
+}
 
-    .footer {
-        background: #fff;
-        width: 100%;
-        height: remSize(95);
-        text-align: center;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
+.footer {
+    background: #fff;
+    width: 100%;
+    height: remSize(95);
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 </style>
 
 

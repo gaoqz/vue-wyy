@@ -25,77 +25,75 @@
 <script>
 
 export default {
-  name: 'header',
-  data() {
-    return {
-      index: ''
-    };
-  },
-  computed: {
-    homeTabIndex() {
-      return this.$store.state.homeTabIndex || 1;
+    name: 'header',
+    data() {
+        return {
+            index: ''
+        };
     },
-    skinColor() {
-      return this.$store.state.skinColor;
+    computed: {
+        homeTabIndex() {
+            return this.$store.state.homeTabIndex || 1;
+        },
+        skinColor() {
+            return this.$store.state.skinColor;
+        }
+    },
+    methods: {
+        toMy() {
+            this.$store.commit('setHomeTabIndex', 1);
+            this.$router.push('/my');
+        },
+        toFind() {
+            this.$store.commit('setHomeTabIndex', 2);
+            this.$router.push('/find');
+        },
+        toFriends() {
+            this.$store.commit('setHomeTabIndex', 3);
+            this.$router.push('/friends');
+        },
+        toSearch() {
+            this.$store.commit('showOrHideHeader', false);
+            this.$router.push('/search');
+        },
+        showAsideMenu() {
+            this.$store.commit('showAsideMenu', true);
+        }
     }
-  },
-  methods: {
-    toMy() {
-        this.$store.commit('setHomeTabIndex', 1);
-        this.$router.push('/my');
-    },
-    toFind() {
-        this.$store.commit('setHomeTabIndex', 2);
-        this.$router.push('/find');
-    },
-    toFriends() {
-        this.$store.commit('setHomeTabIndex', 3);
-        this.$router.push('/friends');
-    },
-    toSearch() {
-        this.$store.commit('showOrHideHeader', false);
-        this.$router.push('/search');
-    },
-    showAsideMenu() {
-      this.$store.commit('showAsideMenu', true);
-    }
-  }
 }
 </script>
 
 <style lang="scss" scoped>
+.fadeIn-enter-active {
+    transition: all .5s ease;
+} // .fadeIn-leave-active {
+//     transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+// }
+.fadeIn-enter {
+    transform: translateX(-250px);
+    opacity: 0;
+}
 
-    .fadeIn-enter-active {
-        transition: all .5s ease;
-    }
-    // .fadeIn-leave-active {
-    //     transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-    // }
-    .fadeIn-enter {
-        transform: translateX(-250px);
-        opacity: 0;
-    }
-  .header {
+.header {
     background-color: #B72712;
     color: white;
     flex: 1;
     width: 100%;
 
     .tab {
-      display: flex;
-      border-bottom: 1px solid #9E9E9E;
-      .item {
-        display: inline-block;
-        flex: 1;
-        padding: 10px;
-        color: #BDBDBD;
-      }
+        display: flex;
+        border-bottom: 1px solid #9E9E9E;
+        .item {
+            display: inline-block;
+            flex: 1;
+            padding: 10px;
+            color: #BDBDBD;
+        }
 
-      .link {
-        font-weight: bold;
-        color: #fff;
-       }
-
+        .link {
+            font-weight: bold;
+            color: #fff;
+        }
     }
-  }
+}
 </style>

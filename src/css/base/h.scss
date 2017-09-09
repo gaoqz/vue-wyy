@@ -1,25 +1,29 @@
 @charset "utf-8";
 
 @each $name, $size in $hMap {
-  .#{$name} {
-    font-size: $size !important;
-    font-weight: normal;
-    //line-height: 1.2;
-  }
+    .#{$name} {
+        font-size: $size !important;
+        font-weight: normal;
+
+        //line-height: 1.2;
+
+    }
 }
 
 @each $name, $size in $hMap {
-  #{$name} {
-    font-size: $size;
-    font-weight: normal;
-    //line-height: 1.5;
-  }
+    #{$name} {
+        font-size: $size;
+        font-weight: normal;
+
+        //line-height: 1.5;
+
+    }
 }
 
 .h0 {
-  font-size: 0;
+    font-size: 0;
 }
 
 p {
-  @extend .h6, .font-color-global-lighter;
+    @extend .h6, .font-color-global-lighter;
 }

@@ -1,21 +1,25 @@
 @charset "utf-8";
 
-.yhj-btn-touched{
-  opacity: 0.5;
-  //&:before{
-  //  height: remSize(88);
-  //  width: remSize(750);
-  //  position: absolute;
-  //  bottom: 0;
-  //  left: 0;
-  //  content: '';
-  //  background-color: rgba(0,0,0,0.15);
-  //}
+.yhj-btn-touched {
+    opacity: 0.5;
+
+    //&:before{
+    //  height: remSize(88);
+    //  width: remSize(750);
+    //  position: absolute;
+    //  bottom: 0;
+    //  left: 0;
+    //  content: '';
+    //  background-color: rgba(0,0,0,0.15);
+    //}
 }
-.yhj-tab-touched{
-  background-color: rgba(0,0,0,0.05) !important;
-  //opacity: 0.5;
+
+.yhj-tab-touched {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+
+    //opacity: 0.5;
 }
-.yhj-icon-touched{
-  transform: scale(1.1);
+
+.yhj-icon-touched {
+    transform: scale(1.1);
 }

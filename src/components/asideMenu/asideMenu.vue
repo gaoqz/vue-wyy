@@ -97,7 +97,7 @@
 <script>
 export default {
     name: 'asideMenu',
-    computed:{
+    computed: {
         skinColor() {
             return this.$store.state.skinColor;
         }
@@ -115,10 +115,13 @@ export default {
 .fadeIn-enter-active {
     transition: all .4s ease;
 }
+
 .fadeIn-leave-active {
     transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
-.fadeIn-enter, .fadeIn-leave-active {
+
+.fadeIn-enter,
+.fadeIn-leave-active {
     transform: translateX(-250px);
     opacity: 0;
 }
@@ -134,39 +137,39 @@ export default {
     display: flex;
     z-index: 1;
     .aside {
-      flex: 8;
-      background-color: #f3f3f3;
+        flex: 8;
+        background-color: #f3f3f3;
     }
     .mask {
-      flex: 2;
-      background-color: rgba(0, 0, 0, 0.4) !important;
+        flex: 2;
+        background-color: rgba(0, 0, 0, 0.4) !important;
     }
     .info {
-      padding-top: remSize(80);
-      padding-bottom: remSize(30);
-      padding-left: remSize(20);
-      background-color: #B72712;
-      box-shadow: 2px 0 10px gray;
-      flex: 1;
-      img {
-        width: remSize(120);
-        height: remSize(120);
-        border-radius: 50%;
-      }
+        padding-top: remSize(80);
+        padding-bottom: remSize(30);
+        padding-left: remSize(20);
+        background-color: #B72712;
+        box-shadow: 2px 0 10px gray;
+        flex: 1;
+        img {
+            width: remSize(120);
+            height: remSize(120);
+            border-radius: 50%;
+        }
 
-      .padding-height-xxs {
-          padding-top: remSize(2);
-          padding-bottom: remSize(2);
-      }
+        .padding-height-xxs {
+            padding-top: remSize(2);
+            padding-bottom: remSize(2);
+        }
 
-      .user-lv{
-          border: 1px solid #fff;
-          border-radius: remSize(16);
-      }
-      .user-sign{
-          border: 1px solid #fff;
-          border-radius: remSize(20);
-      }
+        .user-lv {
+            border: 1px solid #fff;
+            border-radius: remSize(16);
+        }
+        .user-sign {
+            border: 1px solid #fff;
+            border-radius: remSize(20);
+        }
     }
 
     .menu {
@@ -186,16 +189,16 @@ export default {
         border-top: solid 1px #E8E8E8;
         display: flex;
 
-        .s-dark{
+        .s-dark {
             flex: 4;
             line-height: remSize(80);
         }
-        .s-setting{
+        .s-setting {
             flex: 3;
             line-height: remSize(80);
         }
-        .s-logout{
-            flex:3;
+        .s-logout {
+            flex: 3;
             line-height: remSize(80);
         }
     }

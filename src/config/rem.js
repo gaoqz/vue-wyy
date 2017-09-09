@@ -10,6 +10,4 @@
     if (!d.addEventListener) return;
     w.addEventListener(resizeEvt, recalc, false);
     d.addEventListener('DOMContentLoaded', recalc, false);
-    d.addEventListener('orientationchange', recalc, false);
-    d.addEventListener('resize', recalc, false);
 })(document, window)
